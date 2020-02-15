@@ -1,0 +1,291 @@
+/* UTILITIES */
+/*
+Let's you add code for specific window size.
+
+Properties:
+- $from (string | number): defines where included code starts working. Using values from '$breakpoints' map in '_variables.scss' is suggested but you can also use custom ones;
+
+- $to (string | number): defines where included code stops working. Also custom values are allowed;
+
+- $exclude (string | list | [list]): defines breakpoints that are excluded from working. You can define single (i.e. $exclude: tablet), multiple (i.e. $exclude: tablet phablet) or ranged  (i.e. $exclude: [tablet phablet]) values. As far as multiple values let you exclude only particular breakpoints (tablet and phablet separately), ranged values exclude those breakpoints and everything between (from tablet to phablet);
+
+- $only (string | list): use it if you want to add styles only for particular breakpoints. Will be ignored if '$from' or '$to' are defined;
+
+- $height (boolean): use it if you want mixin to work with the screen height instead of its width;
+
+- $landscape (boolean): use it if you want to execute code only if screen width is greater than its height;
+
+- $also (string): lets you duplicate defined styles for some other occassions i.e. $bp(tablet, $also: '.touch') may be helplful if you want your code to be executed on the tablets but also devices that support screen touch.
+
+For examples, look at the bottom of this file.
+*/
+/*
+Examples:
+
+// Excludes tablet and phablet
+// @include bp($from: desktop, $to: mobile-s, $exclude: tablet phablet) { background: tomato; }
+
+// Excludes range from tablet to phablet, so portrait also
+// @include bp($from: desktop, $to: mobile-s, $exclude: [tablet phablet]) { background: tomato; }
+
+// Adds styles also for specific cases, i.e. if device has no touch or for particular section
+// @include bp(phablet, $also: '.menu-visible') { background-color: tomato; }
+
+// Adds styles for particular breakpoints only. Will be ignored if $from or $to are defined
+//    Will work
+// @include bp($only: tablet phablet) { background-color: tomato;}
+// @include bp($only: hd) { background-color: tomato;}
+
+
+//    Will not work
+// @include bp($from: tablet, $only: phablet) { background-color: tomato;}
+
+// Applies styles only if width of the screen is greater than its height
+// @include bp($landscape: true) { background-color: tomato;}
+
+// Custom values
+// @include bp(portrait, 300) { background-color: tomato;}
+
+// Height instead of width
+// @include bp(400, $height: true) { background-color: tomato;}
+
+// Errors:
+// - wrong values
+// @include bp(portrait, janusz) { background-color: tomato;}
+
+// - $from set to the highest breakpoint
+// @include bp(hd) { background-color: tomato;}
+
+// - custom/wrong value for $only
+// @include bp($only: janusz) { background-color: tomato;}
+
+*/
+/* BASE */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #fff;
+  color: #000;
+  font-family: 'Roboto', sans-serif;
+  max-width: 100vw;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 60px;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 16px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 90px 0 90px 0;
+}
+
+.tagline {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #565656;
+}
+
+/* COMPONENTS */
+.btn-primary {
+  background-color: #ff5353;
+  border: 1px solid #ff5353;
+  height: 50px;
+  width: 170px;
+}
+
+.btn-primary:hover {
+  background-color: #fff;
+  color: #ff5353;
+  border: 1px solid #ff5353;
+}
+
+.icon {
+  font-size: 17px;
+  font-weight: 400;
+  padding: 17px;
+}
+
+.order-1 {
+  margin: auto;
+  text-align: center;
+}
+
+.order-2 img {
+  margin-top: -5px;
+}
+
+.brand {
+  margin: auto;
+  padding: 0;
+}
+
+.header-icons {
+  display: flex;
+  justify-content: flex-end;
+  margin: auto;
+  padding: 0;
+  margin-bottom: 5px;
+}
+
+.product-item {
+  width: 360px;
+  height: 451px;
+  background-color: #f0f2f1;
+}
+
+.social-item {
+  height: 250px;
+  width: auto;
+  background-color: #9a9a9a;
+}
+
+.blog-item {
+  width: 359px;
+  height: 350px;
+  background-color: #afafaf;
+  margin-right: 30px;
+}
+
+/* LAYOUT */
+.top-header {
+  font-size: 11px;
+  height: 30px;
+  background-color: #fef7f6;
+  width: 100vw;
+}
+
+.top-header__phone, .top-header__mail, .top-header__gift, .top-header__track, .top-header__lang {
+  text-transform: uppercase;
+  margin: auto;
+  padding-right: 20px;
+  padding-left: 10px;
+  border-right: 1px solid #777777;
+}
+
+.top-header .row {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.top-header .col {
+  padding: 0;
+}
+
+.top-header__phone, .top-header__gift {
+  padding-left: 0;
+}
+
+.top-header__mail {
+  padding-right: 0;
+  border: none;
+  text-transform: none;
+}
+
+.top-header__lang {
+  border: none;
+}
+
+.row {
+  margin: 0;
+}
+
+.navbar {
+  margin: auto;
+  padding: 0;
+}
+
+.navbar ul {
+  display: flex;
+  margin: 0;
+}
+
+.navbar li {
+  flex-direction: row;
+  list-style: none;
+  font-weight: 500;
+  font-size: 13px;
+  text-transform: uppercase;
+  line-height: 0.8;
+  padding-right: 40px;
+}
+
+.navbar li a {
+  color: #000;
+}
+
+.container {
+  min-width: 1150px;
+  margin: auto;
+}
+
+.container-fluid {
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  width: 100%;
+}
+
+header .row {
+  height: 80px;
+}
+
+section {
+  height: auto;
+}
+
+footer {
+  height: 481px;
+  background-color: #000000;
+  background-image: linear-gradient(to right, #e9e1d8 0%, #f7f2eb 48%, #e4dacf 99%, #e4dacf 100%);
+}
+
+/* SECTIONS */
+.banner {
+  position: relative;
+  height: 790px;
+  background-color: #e4d8ca;
+  background-image: url("../../images/banner-bg.jpg");
+}
+
+.banner .container {
+  margin: 0;
+  min-width: 100%;
+}
+
+.banner-two {
+  height: 630px;
+  background-color: #f6f6f6;
+  background-image: linear-gradient(to right, #e9e1d8 0%, #f7f2eb 48%, #e4dacf 99%, #e4dacf 100%);
+}
+
+.feature-products .row {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+/* VENDORS */

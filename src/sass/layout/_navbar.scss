@@ -1,0 +1,6 @@
+.navbar { margin: auto; padding: 0; 
+    ul { display: flex; margin: 0; }
+    li { flex-direction: row; list-style: none; font-weight: 500; font-size: 13px; text-transform: uppercase; line-height: 0.8; padding-right: 40px; 
+      a { color: #000; }
+    }
+}

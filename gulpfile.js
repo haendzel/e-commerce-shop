@@ -5,7 +5,6 @@ const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
 const del = require('del');
-const postcss = require('gulp-postcss');
 const sass = require('gulp-sass');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
@@ -54,7 +53,6 @@ function cssTask(done) {
             replace: true
           }))
         .pipe(rename({ suffix: '.min' }))
-        .pipe(postcss([autoprefixer(), cssnano()]))
         .pipe(dest(config.dist.css))
     done();
 }

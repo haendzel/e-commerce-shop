@@ -1,0 +1,5 @@
+.banner { position: relative; height: 790px; background-color: #e4d8ca; background-image: url('../../images/banner-bg.jpg');
+    .container { margin: 0; min-width: 100%; }
+    &-two { height: 630px; background-color: #f6f6f6; background-image: linear-gradient(to right, #e9e1d8 0%, #f7f2eb 48%, #e4dacf 99%, #e4dacf 100%);
+    }
+}
