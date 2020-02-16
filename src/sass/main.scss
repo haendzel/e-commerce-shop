@@ -16,7 +16,6 @@
 'components/order',
 'components/brand',
 'components/header-icons',
-'components/product-item',
 'components/social-item',
 'components/blog-item';
 
@@ -34,7 +33,8 @@
 /* SECTIONS */
 @import 
 'sections/section--banner',
-'sections/section--feature-products';
+'sections/section--pop-products',
+'sections/section--feat-products';
 
 /* VENDORS */
 //nothing

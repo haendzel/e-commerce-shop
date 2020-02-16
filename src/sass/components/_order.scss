@@ -1,6 +1,6 @@
 .order { 
-    &-1 { margin: auto; text-align: center; }
-    &-2 { 
+    &--1 { margin: auto; text-align: center; max-width: 530px; margin-right: 20px; }
+    &--2 { 
         img { margin-top: -5px; }
     }
 }

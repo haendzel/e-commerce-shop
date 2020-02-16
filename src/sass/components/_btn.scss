@@ -1,4 +1,4 @@
-.btn {
+.btn { text-transform: uppercase; line-height: 38px;
     &-primary { background-color: #ff5353; border: 1px solid #ff5353; height: 50px; width: 170px;
         &:hover { background-color: #fff; color: #ff5353; border: 1px solid #ff5353; } 
     }

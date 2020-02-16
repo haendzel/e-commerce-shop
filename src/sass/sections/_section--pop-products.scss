@@ -1,0 +1,8 @@
+.pop-products {
+    .container { display: flex; }
+    &__item { }
+    &__photo { background-color: $under_color; 
+        img { height: 341px; width: auto }
+    }
+    &__info { @include info-product; }
+}

@@ -109,6 +109,11 @@ h3 {
 }
 
 /* COMPONENTS */
+.btn {
+  text-transform: uppercase;
+  line-height: 38px;
+}
+
 .btn-primary {
   background-color: #ff5353;
   border: 1px solid #ff5353;
@@ -128,12 +133,14 @@ h3 {
   padding: 17px;
 }
 
-.order-1 {
+.order--1 {
   margin: auto;
   text-align: center;
+  max-width: 530px;
+  margin-right: 20px;
 }
 
-.order-2 img {
+.order--2 img {
   margin-top: -5px;
 }
 
@@ -148,12 +155,6 @@ h3 {
   margin: auto;
   padding: 0;
   margin-bottom: 5px;
-}
-
-.product-item {
-  width: 360px;
-  height: 451px;
-  background-color: #f0f2f1;
 }
 
 .social-item {
@@ -268,11 +269,12 @@ footer {
 .banner {
   position: relative;
   height: 790px;
+  margin-bottom: 60px;
   background-color: #e4d8ca;
   background-image: url("../../images/banner-bg.jpg");
 }
 
-.banner .container {
+.banner .container-fluid {
   margin: 0;
   min-width: 100%;
 }
@@ -283,9 +285,100 @@ footer {
   background-image: linear-gradient(to right, #e9e1d8 0%, #f7f2eb 48%, #e4dacf 99%, #e4dacf 100%);
 }
 
-.feature-products .row {
-  padding-left: 100px;
-  padding-right: 100px;
+.banner-two h1 {
+  font-size: 100px;
+  margin-bottom: 50px;
+  font-family: 'Dancing Script', cursive;
+}
+
+.banner-two h4 {
+  text-transform: uppercase;
+  font-size: 42px;
+  font-weight: 300;
+  margin-bottom: 50px;
+}
+
+.pop-products .container {
+  display: flex;
+}
+
+.pop-products__photo {
+  background-color: #f0f2f1;
+}
+
+.pop-products__photo img {
+  height: 341px;
+  width: auto;
+}
+
+.pop-products__info {
+  text-align: center;
+  padding: 25px 0 30px 0;
+}
+
+.pop-products__info .price, .pop-products__info .title {
+  font-weight: 700;
+}
+
+.pop-products__info .price {
+  font-size: 18px;
+}
+
+.pop-products__info .title {
+  color: #888888;
+  font-size: 14px;
+  padding-top: 5px;
+}
+
+.pop-products__info .ratings {
+  margin: 5px 0 5px 0;
+}
+
+.pop-products__info .ratings a {
+  color: #ff5353;
+  text-decoration: none;
+}
+
+.feat-products {
+  margin-bottom: 110px;
+}
+
+.feat-products__item {
+  padding: 0;
+}
+
+.feat-products__photo {
+  width: 360px;
+  height: 450px;
+  background-color: #f0f2f1;
+}
+
+.feat-products__info {
+  text-align: center;
+  padding: 25px 0 30px 0;
+}
+
+.feat-products__info .price, .feat-products__info .title {
+  font-weight: 700;
+}
+
+.feat-products__info .price {
+  font-size: 18px;
+}
+
+.feat-products__info .title {
+  color: #888888;
+  font-size: 14px;
+  padding-top: 5px;
+}
+
+.feat-products__info .ratings {
+  margin: 5px 0 5px 0;
+}
+
+.feat-products__info .ratings a {
+  color: #ff5353;
+  text-decoration: none;
 }
 
 /* VENDORS */

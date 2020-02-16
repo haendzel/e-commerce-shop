@@ -2,6 +2,20 @@
 // For reference check out: https://jonsuh.com/hamburgers/
 
 // Squeeze – external lines to center, then rotates. Center line scales to 0
+@mixin dancing-font {
+	font-family: 'Dancing Script', cursive;
+}
+
+@mixin info-product {
+	text-align: center; padding: 25px 0 30px 0;
+        .price, .title { font-weight: 700; }
+        .price { font-size: 18px; }
+        .title { color: #888888; font-size: 14px; padding-top: 5px; }
+        .ratings { margin: 5px 0 5px 0;
+            a { color: #ff5353; text-decoration: none; }
+        }
+
+	}
 @mixin burger-squeeze {
 
 	&:before,
