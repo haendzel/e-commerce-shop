@@ -10,4 +10,5 @@ Work in progress. Demo is coming. 📺
 | BEM Methodology |
 | Javascript ES6+ |
 | Gulp |
+| Responsive Web Design |
 | npm |
