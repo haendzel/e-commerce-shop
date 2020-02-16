@@ -1,0 +1,6 @@
+.product {
+    &__item { }
+    &__photo { background-color: $under_color; 
+        &--img { height: 341px; width: auto }
+    }
+}

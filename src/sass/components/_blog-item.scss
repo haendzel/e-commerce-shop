@@ -1,3 +1,4 @@
-.blog-item { 
-    width: 359px; height: 350px; background-color: #afafaf; margin-right: 30px;
+.blog-item { padding: 0; margin: auto;
+    max-width: 359px;
+    &__photo { height: 350px; background-color: $under_color; }
 }

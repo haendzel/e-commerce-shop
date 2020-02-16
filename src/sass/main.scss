@@ -11,6 +11,8 @@
 
 /* COMPONENTS */
 @import 
+'components/info',
+'components/product',
 'components/btn',
 'components/icon',
 'components/order',
@@ -34,7 +36,10 @@
 @import 
 'sections/section--banner',
 'sections/section--pop-products',
-'sections/section--feat-products';
+'sections/section--feat-products',
+'sections/section--features',
+'sections/section--blog',
+'sections/section--instagram';
 
 /* VENDORS */
 //nothing
